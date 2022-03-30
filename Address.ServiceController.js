@@ -40,23 +40,11 @@ define('Address.ServiceController', ['ServiceController', 'Application', 'Addres
         post: function() {
             console.log("this.data",JSON.stringify(this.data));
             this.data['addr3'] = this.data['addr3']+'-T';
-            var self = this;
+            
             const id = AddressModel.create(this.data);
 
             console.log("this.data",JSON.stringify(this.data));
-            var data = this.data;
-            var self = this;
-
-            for (const property in data) {
-              
-                  data[property] = self.data[property] !== '' ? self.data[property] : null
-
-              }
-              data['defaultbilling'] = 'F';
-              data['defaultshipping'] = 'F';
-              data['isvalid'] = 'T';
-              data['internalid'] = String(Math.floor(1000 + Math.random() * 9000));
-              console.log("data",JSON.stringify(data));
+         
 
 
             // Do not return anything here, we need send content with status 201
