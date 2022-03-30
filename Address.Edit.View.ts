@@ -68,7 +68,7 @@ const AddressEditView: any = BackboneView.extend({
                             .removeClass('fade')
                             .modal('hide')
                             .data('bs.modal', null);
-                        this.destroy();
+                        this.destroy();//
                     } else {
                         Backbone.history.navigate('#addressbook', { trigger: true });
                     }
