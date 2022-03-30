@@ -67,7 +67,9 @@ define('Address.ServiceController', ['ServiceController', 'Application', 'Addres
         // @return {Address.Model.Attributes}
         put: function() {
             const id = this.request.getParameter('internalid');
-            this.data['addr3'] = this.data['addr3'];
+                  if(address.addr3.indexOf('undefined') != -1){
+                    delete this.data.isAdded; 
+                }
             AddressModel.update(id, this.data);
             return AddressModel.get(id);
         },
